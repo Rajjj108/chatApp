@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Configure CORS for Socket.IO
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:5173", "https://chat-app-frontend-gt5v.onrender.com"],
+    origin: ["http://localhost:3000", "http://localhost:5173", "https://chat-app-frontend-27t2.onrender.com"],
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -20,7 +20,7 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://chat-app-frontend-gt5v.onrender.com"
+    "https://chat-app-frontend-27t2.onrender.com"
   ],
   credentials: true
 }));
