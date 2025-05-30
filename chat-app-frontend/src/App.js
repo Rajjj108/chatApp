@@ -35,9 +35,10 @@ const ChatApp = () => {
     setIsJoining(true);
     
     // Connect to socket server (replace with your backend URL)
-    const newSocket = io('http://localhost:3001', {
-      transports: ['websocket']
-    });
+   const newSocket = io(process.env.REACT_APP_SOCKET_SERVER, {
+  transports: ['websocket'],
+  withCredentials: true
+});
 
     newSocket.emit('join-room', { roomCode: roomCode.toUpperCase(), username });
 

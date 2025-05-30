@@ -9,14 +9,21 @@ const server = http.createServer(app);
 // Configure CORS for Socket.IO
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:5173"], // React dev servers
+    origin: ["http://localhost:3000", "http://localhost:5173", "https://chat-app-frontend-ph10.onrender.com"],
     methods: ["GET", "POST"],
     credentials: true
   }
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://chat-app-frontend-ph10.onrender.com"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // In-memory storage for chat rooms (no database needed)
