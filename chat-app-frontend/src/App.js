@@ -35,8 +35,8 @@ const ChatApp = () => {
     setIsJoining(true);
     
     // Connect to socket server (replace with your backend URL)
-   const newSocket = io(process.env.REACT_APP_SOCKET_SERVER, {
-  transports: ['websocket'],
+   const newSocket = io(process.env.REACT_APP_SOCKET_SERVER || 'https://chatapp-backend-51g1.onrender.com', {
+  transports: ['websocket', 'polling'],
   withCredentials: true
 });
 
